@@ -145,7 +145,40 @@
       <div>© <span id="year"></span> Nexum — Todos os direitos reservados.</div>
     </footer>
   </main>
-<script src="js/script.js" defer></script>
+<script>
+  (function () {
+    // ======= CONFIGURAÇÕES =======
+    const PARAM_NAME  = 'inscricaocofirmado';       // nome do parâmetro na URL
+    const REQUIRED_KEY = 'IiEwS6fBycbUXhXdP7hrgo9x'; // sua chave única
+    const PIXEL_FILE  = '/js/pixel.js';            // caminho do arquivo pixel
+    const FIRE_ONCE   = 'lead_obrigado_fired';     // flag para não disparar 2x
+  
+    try {
+      const qs = new URLSearchParams(window.location.search);
+      const ok = qs.get(PARAM_NAME) === REQUIRED_KEY;
+      const already = sessionStorage.getItem(FIRE_ONCE) === '1';
+  
+      if (ok && !already) {
+        // Passa contexto para o pixel.js (opcional)
+        window.__LEAD_OBRIGADO_CTX__ = {
+          paramName: PARAM_NAME,
+          key: REQUIRED_KEY,
+          rawQuery: window.location.search
+        };
+  
+        // Carrega pixel.js dinamicamente
+        const s = document.createElement('script');
+        s.src = PIXEL_FILE;
+        s.async = true;
+        s.onload = () => sessionStorage.setItem(FIRE_ONCE, '1');
+        document.head.appendChild(s);
+      }
+    } catch (err) {
+      console.error('Pixel loader error:', err);
+    }
+  })();
+</script>
+
 <!-- Meta Pixel Code -->
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=806272835133811&ev=PageView&noscript=1"
