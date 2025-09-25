@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <title>Obrigado pela sua compra | Nexum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Obrigado! Em 30min vamos desenvolver uma estrutura para sua clínica." />
+  <meta name="theme-color" content="#0A66FF" />
+
+  <link rel="icon" href="./img/Logo_rb.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./img/Logo_rb.png" />
+
+  <style>
+    :root{
+      --bg-white: #ffffff;
+      --bg-black: #0b0f14;
+      --panel: #0f172a;
+      --muted: #8fa8c4;
+      --nx-blue: #0A66FF;
+      --card: #0f2233;
+      --radius:14px;
+      --gap:20px;
+      color-scheme: light dark;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:var(--bg-black);
+      color:var(--bg-white);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      line-height:1.45
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    .container{max-width:900px;margin:0 auto;padding:28px 20px}
+    header{padding:18px 0 8px;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:50px;width:auto;display:block}
+
+    .block{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(10,102,255,0.02));
+      border-radius:var(--radius);
+      padding:20px;
+      margin-top:var(--gap);
+      border:1px solid rgba(255,255,255,0.03)
+    }
+    .center{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+
+    .note{
+      background:linear-gradient(180deg, rgba(10,102,255,0.06), rgba(10,102,255,0.03));
+      border-radius:12px;padding:18px;
+      border:1px solid rgba(10,102,255,0.12);
+      color:#eaf6ff;font-weight:600;
+    }
+    .note p{margin:8px 0}
+
+    h2{font-size:22px;margin:0}
+    p.lead{color:var(--muted);margin:0;font-size:15px}
+
+    .cta-row{
+      display:flex;flex-direction:column;gap:10px;
+      margin-top:12px;width:100%
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 16px;border-radius:12px;font-weight:800;
+      border:none;cursor:pointer;text-decoration:none
+    }
+    .btn-primary{background:var(--nx-blue);color:white}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dfefff}
+
+    .summary h3{margin:0 0 8px;font-size:16px}
+    .summary ul{margin:0;padding-left:20px;color:var(--muted);text-align:left}
+    .summary li{margin:8px 0}
+
+    .steps{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+    .step{background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .step h4{margin:0 0 6px}
+
+    footer{
+      margin-top:28px;padding:18px 0;
+      border-top:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);font-size:13px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div class="brand">
+        <!-- LOGO da empresa -->
+        <img src="./img/Logo_rb.png" alt="Logo Nexum">
+      </div>
+      <div style="color:var(--muted);font-weight:600">Atendimento: Seg–Sex, 09h–18h</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="block center">
+      <h2>Parabéns — sua jornada para atrair pacientes qualificados começa agora.</h2>
+      <p class="lead">Em 30 minutos vamos desenvolver uma estrutura prática para trazer pacientes qualificados todos os meses.</p>
+
+      <div class="note" style="width:100%;max-width:820px;text-align:left">
+        <p><strong>Parabéns:</strong> Você está prestes à conhecer a estrutura que está transformando as Clínicas da saúde e estética.</p>
+        <p>Em <strong>30min</strong> Nós (Eu e Você) Vamos Desenvolver uma Estrutura que irá trazer todos os meses <strong>Centenas de pacientes QUALIFICADOS</strong> prontos para colocar lucro no seu bolso.</p>
+        <p><strong>FIQUE ATENTO:</strong> Em breve nosso time entrará em contato via WhatsApp/Telefone para realizar a triagem. Caso não tenhamos retorno, você será desqualificado para a nossa sessão e transformar totalmente a estrutura da sua Clínica!</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="summary">
+        <h3>O QUE VAMOS APRESENTAR EM 30 MINUTOS PARA IMPULSIONAR AS VENDAS DO SEU NEGÓCIO?</h3>
+        <p style="color:var(--muted);margin-top:6px">
+          Nessa reunião, nossos especialistas vão apresentar um diagnóstico do seu marketing digital, identificando:
+        </p>
+        <ul>
+          <li><strong>Sua situação atual:</strong> Como a sua operação está funcionando atualmente? Utilizaremos as informações repassadas e a ligação de triagem como base.</li>
+          <li><strong>Possíveis problemas:</strong> O que impede a sua clínica de ter mais pacientes? Quais desafios estão bloqueando o crescimento?</li>
+          <li><strong>Caminhos e oportunidades:</strong> Quais ações estratégicas e oportunidades existem para melhorar a operação do seu marketing digital.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <h3 style="margin:0 0 10px;text-align:left">Próximos passos</h3>
+      <div class="steps">
+        <div class="step">
+          <h4>1 — Triagem</h4>
+          <div style="color:var(--muted)">Recebemos seu contato e vamos ligar/WhatsApp para alinhar informações.</div>
+        </div>
+        <div class="step">
+          <h4>2 — Reunião de 30min</h4>
+          <div style="color:var(--muted)">Diagnóstico prático e plano inicial com ações concretas.</div>
+        </div>
+        <div class="step">
+          <h4>3 — Implementação</h4>
+          <div style="color:var(--muted)">Passo a passo para começar a captar pacientes qualificados.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Nexum — Todos os direitos reservados.</div>
+    </footer>
+  </main>
+
+</body>
+</html>
