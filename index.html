@@ -85,6 +85,51 @@
       display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px
     }
   </style>
+<script>
+  (function () {
+    // ======= CONFIGURE AQUI =======
+    const PARAM_NAME = 'inscricaocofirmado';   // nome do parâmetro
+    const REQUIRED_KEY = 'IiEwS6fBycbUXhXdP7hrgo9x';  // defina sua chave única
+    const FIRE_ONCE_FLAG = 'lead_obrigado_fired'; // evita evento duplicado
+  
+    // ======= META PIXEL BASE (seu ID) =======
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  
+    fbq('init', '806272835133811');
+    fbq('track', 'PageView'); // PageView sempre (recomendado pelo Meta)
+  
+    // ======= DISPARO CONDICIONAL DO EVENTO =======
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ok = params.get(PARAM_NAME) === REQUIRED_KEY;
+      const alreadyFired = sessionStorage.getItem(FIRE_ONCE_FLAG) === '1';
+  
+      if (ok && !alreadyFired) {
+        fbq('trackCustom', 'Lead | Obrigado Page!', {
+          param_name: PARAM_NAME,
+          key_used: REQUIRED_KEY,
+          querystring: window.location.search,
+          source: 'thankyou_redirect',
+          timestamp: new Date().toISOString()
+        });
+        sessionStorage.setItem(FIRE_ONCE_FLAG, '1');
+      }
+    } catch (e) {
+      console.error('Erro no disparo condicional do Pixel:', e);
+    }
+  })();
+</script>
+<!-- Meta Pixel Code -->
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=806272835133811&ev=PageView&noscript=1"
+/></noscript>
 </head>
 <body>
   <header>
@@ -145,43 +190,5 @@
       <div>© <span id="year"></span> Nexum — Todos os direitos reservados.</div>
     </footer>
   </main>
-<script>
-  (function () {
-    // ======= CONFIGURAÇÕES =======
-    const PARAM_NAME  = 'inscricaocofirmado';       // nome do parâmetro na URL
-    const REQUIRED_KEY = 'IiEwS6fBycbUXhXdP7hrgo9x'; // sua chave única
-    const PIXEL_FILE  = '/js/pixel.js';            // caminho do arquivo pixel
-    const FIRE_ONCE   = 'lead_obrigado_fired';     // flag para não disparar 2x
-  
-    try {
-      const qs = new URLSearchParams(window.location.search);
-      const ok = qs.get(PARAM_NAME) === REQUIRED_KEY;
-      const already = sessionStorage.getItem(FIRE_ONCE) === '1';
-  
-      if (ok && !already) {
-        // Passa contexto para o pixel.js (opcional)
-        window.__LEAD_OBRIGADO_CTX__ = {
-          paramName: PARAM_NAME,
-          key: REQUIRED_KEY,
-          rawQuery: window.location.search
-        };
-  
-        // Carrega pixel.js dinamicamente
-        const s = document.createElement('script');
-        s.src = PIXEL_FILE;
-        s.async = true;
-        s.onload = () => sessionStorage.setItem(FIRE_ONCE, '1');
-        document.head.appendChild(s);
-      }
-    } catch (err) {
-      console.error('Pixel loader error:', err);
-    }
-  })();
-</script>
-
-<!-- Meta Pixel Code -->
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=806272835133811&ev=PageView&noscript=1"
-/></noscript>
 </body>
 </html>
