@@ -112,7 +112,7 @@
       const alreadyFired = sessionStorage.getItem(FIRE_ONCE_FLAG) === '1';
   
       if (ok && !alreadyFired) {
-        fbq('trackCustom', 'Lead | Obrigado Page!', {
+        fbq('track', 'Lead', {
           param_name: PARAM_NAME,
           key_used: REQUIRED_KEY,
           querystring: window.location.search,
