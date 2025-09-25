@@ -1,7 +1,7 @@
 (function () {
     // ===== CONFIGURÁVEIS =====
     const PARAM_NAME = "pagamentocofirmado"; // exatamente como você escreveu
-    const KEY_UNICA  = "SUA_CHAVE_UNICA_AQUI"; // defina a sua
+    const KEY_UNICA  = "lN3oyLxbEpc8gtO6bS5nxpZhIuMTMzuBCwMTEsJcfVHJyL7VKSy3makHSUPxVOArQW6VCy1awNuaDVoXEZddFBFFfXsvfqG85QvxViwBTWD6sklCb5wJynH2xKvRg4uY"; // defina a sua
     // Opcional: só carrega se veio do seu gateway
     // const PAGAMENTO_HOST_PERMITIDO = "seu-gateway.com";
 
