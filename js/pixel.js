@@ -19,6 +19,7 @@ fbq('track', 'PageView');
 // ===== EVENTO CUSTOM: "Lead | Obrigado Page!" =====
 var ctx = window.__LEAD_OBRIGADO_CTX__ || {};
 fbq('trackCustom', 'Lead | Obrigado Page!', {
+  test_event_code: 'TEST70762',
   source: 'thankyou_redirect',
   param_name: ctx.paramName || 'inscricaocofirmado',
   key_used: ctx.key || null,
