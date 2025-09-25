@@ -1,7 +1,7 @@
 (function () {
   // ======= CONFIGURE AQUI =======
   const PARAM_NAME = 'inscricaocofirmado';     // nome do parâmetro na URL
-  const REQUIRED_KEY = 'IiEwS6fBycbUXhXdP7hrgo9x0lMRTkJFQvsAsKyioODoOmJeyKrRQAdEhdq53wGISbsDBpT3XpDsDRaqImjevRnfLks5NMDW5Qqxr9YpMPrx7hhX3GEfK4p064b5RAys';    // defina sua chave única
+  const REQUIRED_KEY = 'IiEwS6fBycbUXhXdP7hrgo9x';    // defina sua chave única
   const PIXEL_FILE = '/js/pixel.js';           // caminho do seu pixel.js
   const FIRE_ONCE_FLAG = 'lead_obrigado_fired';// evita disparar duplicado ao atualizar
 
